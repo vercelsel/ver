@@ -53,22 +53,20 @@ export default function Industries() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] overflow-hidden">
           {industries.map((industry, i) => {
             const Icon = industry.icon
             const isOpen = openIndex === i
+            const isLast = i === industries.length - 1
 
             return (
-              <motion.div
+              <div
                 key={industry.title}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className={!isLast ? 'border-b border-[var(--border)]' : ''}
               >
                 <button
                   onClick={() => toggle(i)}
-                  className="flex w-full items-center gap-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] px-6 py-5 text-left transition-colors hover:border-[var(--accent)]/40"
+                  className="flex w-full items-center gap-4 px-6 py-5 text-left transition-colors hover:bg-[var(--muted)]/50"
                   aria-expanded={isOpen}
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--accent)]/10">
@@ -78,8 +76,8 @@ export default function Industries() {
                     {industry.title}
                   </span>
                   <div
-                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[var(--border)] transition-transform duration-300 ${
-                      isOpen ? 'rotate-45 border-[var(--accent)]' : ''
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-transform duration-300 ${
+                      isOpen ? 'rotate-45 border-[var(--accent)]' : 'border-[var(--border)]'
                     }`}
                   >
                     <svg
@@ -112,7 +110,7 @@ export default function Industries() {
                       transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-5 pt-3 pl-20">
+                      <div className="px-6 pb-5 pt-1 pl-20">
                         <p className="text-sm leading-relaxed text-[var(--muted-foreground)]">
                           {industry.description}
                         </p>
@@ -120,7 +118,7 @@ export default function Industries() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </div>
             )
           })}
         </div>
