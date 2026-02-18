@@ -43,11 +43,11 @@ const FRAGMENT_SHADER = `
 
   void main() {
     vec2 uv = gl_FragCoord.xy / uResolution;
-    float t = uTime * 0.15;
+    float t = uTime * 0.35;
 
-    float n1 = snoise(uv * 2.0 + vec2(t * 0.3, t * 0.2));
-    float n2 = snoise(uv * 3.0 + vec2(-t * 0.2, t * 0.4));
-    float n3 = snoise(uv * 1.5 + vec2(t * 0.1, -t * 0.3));
+    float n1 = snoise(uv * 2.0 + vec2(t * 0.5, t * 0.4));
+    float n2 = snoise(uv * 3.0 + vec2(-t * 0.4, t * 0.6));
+    float n3 = snoise(uv * 1.5 + vec2(t * 0.3, -t * 0.5));
 
     vec3 color1 = vec3(0.0, 0.898, 0.627);  // #00e5a0
     vec3 color2 = vec3(0.0, 0.15, 0.1);     // dark teal
