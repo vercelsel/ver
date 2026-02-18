@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-24 sm:pt-20">
       {/* Radial gradient background */}
       <div
         className="pointer-events-none absolute inset-0"
