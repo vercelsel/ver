@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Building2, ShoppingBag, HeartPulse, Coins } from 'lucide-react'
+import { Building2, ShoppingBag, HeartPulse, Bitcoin } from 'lucide-react'
 
 const industries = [
   {
@@ -21,7 +21,7 @@ const industries = [
       'Automated scheduling, intake, patient follow-ups, and documentation. HIPAA-compliant from day one. Your staff stops doing admin work and starts doing the work they were hired for.',
   },
   {
-    icon: Coins,
+    icon: Bitcoin,
     title: 'Crypto',
     description:
       'We automated many of the algorithmic and security aspects of the blockchain, facilitating faster development in the meme coin industry—from code to websites—countless times.',
@@ -34,7 +34,7 @@ export default function Industries() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 max-w-2xl">
           <h2 className="text-balance text-3xl font-bold tracking-tight text-[var(--foreground)] sm:text-4xl">
-            Industries that we specialize in...
+            Industry Expertise
           </h2>
         </div>
 
