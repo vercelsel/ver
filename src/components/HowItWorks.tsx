@@ -43,7 +43,7 @@ export default function HowItWorks() {
           </h2>
         </div>
 
-        <div className="grid gap-px overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-px overflow-hidden rounded-2xl border border-[var(--border)]/60 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, i) => (
             <motion.div
               key={step.number}
@@ -51,7 +51,7 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="flex flex-col bg-[var(--card)] p-8"
+              className="glass-card flex flex-col p-8"
             >
               <span className="mb-6 text-3xl font-bold text-[var(--accent)]">
                 {step.number}
