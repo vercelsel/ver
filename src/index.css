@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Blanka';
+  src: url('https://db.onlinewebfonts.com/t/8cdbb48678e4418f22a2f507c2b975bd.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,6 +21,11 @@
   --accent-foreground: #000000;
   --border: #262626;
   --ring: #00e5a0;
+}
+
+.wexel-logo {
+  font-family: 'Blanka', sans-serif;
+  letter-spacing: 0.15em;
 }
 
 * {
