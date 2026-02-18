@@ -49,7 +49,7 @@ export default function Industries() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-8 hover:border-[var(--accent)]/30 transition-colors"
+                className="glass-card rounded-2xl p-8 hover:border-[var(--accent)]/60 transition-colors"
               >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--accent)]/10">
                   <Icon size={24} className="text-[var(--accent)]" />

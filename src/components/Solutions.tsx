@@ -85,7 +85,7 @@ export default function Solutions() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={cardVariants}
-                className="group rounded-2xl border border-[var(--border)] bg-[var(--card)] p-8 transition-colors hover:border-[var(--accent)]/40"
+                className="group glass-card rounded-2xl p-8 transition-colors hover:border-[var(--accent)]/60"
               >
                 <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--accent)]/10">
                   <Icon size={20} className="text-[var(--accent)]" />
