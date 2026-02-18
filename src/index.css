@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Blanka:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Blanka&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -19,8 +19,7 @@
 
 .wexel-logo {
   font-family: 'Blanka', system-ui;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
 }
 
 * {
