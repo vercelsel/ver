@@ -40,17 +40,9 @@ export default function Industries() {
     <section id="industries" className="px-6 py-24 md:py-32">
       <div className="mx-auto max-w-3xl">
         <div className="mb-16 max-w-2xl">
-          <span className="mb-4 inline-block text-xs font-medium tracking-wider uppercase text-[var(--accent)]">
-            Industries
-          </span>
           <h2 className="text-balance text-3xl font-bold tracking-tight text-[var(--foreground)] sm:text-4xl">
             Industries that we specialize in...
           </h2>
-          <p className="mt-4 text-pretty leading-relaxed text-[var(--muted-foreground)]">
-            We know the exact problems in your industry because we have solved
-            them before. No generic solutions. Systems built for how your
-            business actually works.
-          </p>
         </div>
 
         <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] overflow-hidden">
