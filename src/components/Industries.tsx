@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Building2, ShoppingBag, HeartPulse, Coins } from 'lucide-react'
 
 const industries = [
@@ -25,92 +24,43 @@ const industries = [
     icon: Coins,
     title: 'Crypto',
     description:
-      'We automated many of the algorithmic and security aspects of the blockchain, facilitating faster development in the meme coin industry\u2014from code to websites\u2014countless times.',
+      'We automated many of the algorithmic and security aspects of the blockchain, facilitating faster development in the meme coin industry—from code to websites—countless times.',
   },
 ]
 
 export default function Industries() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
-
-  const toggle = (i: number) => {
-    setOpenIndex(openIndex === i ? null : i)
-  }
-
   return (
     <section id="industries" className="px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-7xl">
         <div className="mb-16 max-w-2xl">
           <h2 className="text-balance text-3xl font-bold tracking-tight text-[var(--foreground)] sm:text-4xl">
             Industries that we specialize in...
           </h2>
         </div>
 
-        <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] overflow-hidden">
+        <div className="grid gap-6 sm:grid-cols-2">
           {industries.map((industry, i) => {
             const Icon = industry.icon
-            const isOpen = openIndex === i
-            const isLast = i === industries.length - 1
 
             return (
-              <div
+              <motion.div
                 key={industry.title}
-                className={!isLast ? 'border-b border-[var(--border)]' : ''}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-8 hover:border-[var(--accent)]/30 transition-colors"
               >
-                <button
-                  onClick={() => toggle(i)}
-                  className="flex w-full items-center gap-4 px-6 py-5 text-left transition-colors hover:bg-[var(--muted)]/50"
-                  aria-expanded={isOpen}
-                >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--accent)]/10">
-                    <Icon size={18} className="text-[var(--accent)]" />
-                  </div>
-                  <span className="flex-1 text-base font-semibold text-[var(--card-foreground)]">
-                    {industry.title}
-                  </span>
-                  <div
-                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-transform duration-300 ${
-                      isOpen ? 'rotate-45 border-[var(--accent)]' : 'border-[var(--border)]'
-                    }`}
-                  >
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="none"
-                      className={`transition-colors duration-300 ${
-                        isOpen
-                          ? 'text-[var(--accent)]'
-                          : 'text-[var(--muted-foreground)]'
-                      }`}
-                    >
-                      <path
-                        d="M7 1v12M1 7h12"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </div>
-                </button>
-
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-5 pt-1 pl-20">
-                        <p className="text-sm leading-relaxed text-[var(--muted-foreground)]">
-                          {industry.description}
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--accent)]/10">
+                  <Icon size={24} className="text-[var(--accent)]" />
+                </div>
+                <h3 className="mb-3 text-2xl font-semibold text-[var(--foreground)]">
+                  {industry.title}
+                </h3>
+                <p className="leading-relaxed text-[var(--muted-foreground)]">
+                  {industry.description}
+                </p>
+              </motion.div>
             )
           })}
         </div>
