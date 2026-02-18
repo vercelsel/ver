@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Blanka&display=swap');
+@font-face {
+  font-family: 'Blanka';
+  src: url('https://db.onlinewebfonts.com/t/8cdbb48678e4418f22a2f507c2b975bd.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
@@ -18,8 +24,8 @@
 }
 
 .wexel-logo {
-  font-family: 'Blanka', system-ui;
-  letter-spacing: 0.02em;
+  font-family: 'Blanka', sans-serif;
+  letter-spacing: 0.15em;
 }
 
 * {
